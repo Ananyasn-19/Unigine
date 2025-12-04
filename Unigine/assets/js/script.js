@@ -55,3 +55,18 @@ const activeEl = function () {
 }
 
 window.addEventListener("scroll", activeEl);
+
+
+
+/**
+ * Button hover ripple effect
+ */
+
+const buttons = document.querySelectorAll("[data-btn]");
+
+const buttonHoverRipple = function (even) {
+    this.style.setProperty("--top", `${event.offsetY}px`);
+    this.style.setProperty("--left", `${event.offsetX}px`)
+} 
+
+addEventOnElements(buttons, "mousemove", buttonHoverRipple);
